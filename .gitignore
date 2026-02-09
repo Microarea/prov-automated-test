@@ -1,0 +1,15 @@
+# Node
+node_modules/
+reports/
+*.log
+
+# Newman
+newman/reports/
+
+# Playwright artifacts
+playwright-report/
+blob-report/
+*.zip
+
+# Misc
+.DS_Store

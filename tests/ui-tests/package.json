@@ -1,0 +1,17 @@
+{
+  "name": "ui-tests",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:pw": "npx playwright install --with-deps",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report",
+    "smoke": "playwright test tests/smoke --project=chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "typescript": "^5.6.0"
+  }
+}
