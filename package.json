@@ -1,0 +1,8 @@
+{
+  "name": "qa-playwright",
+  "private": true,
+  "workspaces": [
+    "api-tests",
+    "ui-tests"
+  ]
+}

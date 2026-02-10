@@ -1,0 +1,62 @@
+<testsuites id="" name="" tests="11" failures="1" skipped="0" errors="0" time="4.086469999999999">
+<testsuite name="GreenLight\cc-be-health.spec.ts" timestamp="2026-02-09T15:31:11.287Z" hostname="" tests="1" failures="0" skipped="0" time="0.108" errors="0">
+<testcase name="Health Check Backend Console" classname="GreenLight\cc-be-health.spec.ts" time="0.108">
+</testcase>
+</testsuite>
+<testsuite name="GreenLight\cc-fe-health.spec.ts" timestamp="2026-02-09T15:31:11.287Z" hostname="" tests="1" failures="0" skipped="0" time="0.204" errors="0">
+<testcase name="health check Frontend Console" classname="GreenLight\cc-fe-health.spec.ts" time="0.204">
+</testcase>
+</testsuite>
+<testsuite name="GreenLight\dbtools-health.spec.ts" timestamp="2026-02-09T15:31:11.287Z" hostname="" tests="1" failures="0" skipped="0" time="0.11" errors="0">
+<testcase name="Health Check DbTools" classname="GreenLight\dbtools-health.spec.ts" time="0.11">
+</testcase>
+</testsuite>
+<testsuite name="GreenLight\gateway-health.spec.ts" timestamp="2026-02-09T15:31:11.287Z" hostname="" tests="1" failures="0" skipped="0" time="0.094" errors="0">
+<testcase name="Health Check Gateway" classname="GreenLight\gateway-health.spec.ts" time="0.094">
+</testcase>
+</testsuite>
+<testsuite name="GreenLight\gwam-account-health.spec.ts" timestamp="2026-02-09T15:31:11.287Z" hostname="" tests="1" failures="1" skipped="0" time="0.044" errors="0">
+<testcase name="Health Check Gwam Account" classname="GreenLight\gwam-account-health.spec.ts" time="0.044">
+<failure message="gwam-account-health.spec.ts:3:5 Health Check Gwam Account" type="FAILURE">
+<![CDATA[  GreenLight\gwam-account-health.spec.ts:3:5 › Health Check Gwam Account ───────────────────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 502
+
+      5 |   const res = await request.get('https://test-gwam.mago.cloud/gwam_account/api/assemblyversion');
+      6 |   // Verifica - Controlla che la risposta abbia uno status code di 200 (OK)
+    > 7 |   expect(res.status()).toBe(200);
+        |                        ^
+      8 | });
+        at C:\GitFolder\prov-automated-test\api-tests\tests\GreenLight\gwam-account-health.spec.ts:7:24
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="GreenLight\gwam-app-health.spec.ts" timestamp="2026-02-09T15:31:11.287Z" hostname="" tests="1" failures="0" skipped="0" time="0.037" errors="0">
+<testcase name="Health Check Gwam App" classname="GreenLight\gwam-app-health.spec.ts" time="0.037">
+</testcase>
+</testsuite>
+<testsuite name="GreenLight\gwam-login-health.spec.ts" timestamp="2026-02-09T15:31:11.287Z" hostname="" tests="1" failures="0" skipped="0" time="0.169" errors="0">
+<testcase name="Health Check Gwam Login" classname="GreenLight\gwam-login-health.spec.ts" time="0.169">
+</testcase>
+</testsuite>
+<testsuite name="GreenLight\gwam-mapper-health.spec.ts" timestamp="2026-02-09T15:31:11.287Z" hostname="" tests="1" failures="0" skipped="0" time="0.024" errors="0">
+<testcase name="Health Check Mapper" classname="GreenLight\gwam-mapper-health.spec.ts" time="0.024">
+</testcase>
+</testsuite>
+<testsuite name="GreenLight\iup-health.spec.ts" timestamp="2026-02-09T15:31:11.287Z" hostname="" tests="1" failures="0" skipped="0" time="0.167" errors="0">
+<testcase name="Health Check Instance Updater" classname="GreenLight\iup-health.spec.ts" time="0.167">
+</testcase>
+</testsuite>
+<testsuite name="GreenLight\messaging-health.spec.ts" timestamp="2026-02-09T15:31:11.287Z" hostname="" tests="1" failures="0" skipped="0" time="0.041" errors="0">
+<testcase name="Health Check MicroMessaging" classname="GreenLight\messaging-health.spec.ts" time="0.041">
+</testcase>
+</testsuite>
+<testsuite name="GreenLight\ping-health.spec.ts" timestamp="2026-02-09T15:31:11.287Z" hostname="" tests="1" failures="0" skipped="0" time="0.042" errors="0">
+<testcase name="Health Check Ping" classname="GreenLight\ping-health.spec.ts" time="0.042">
+</testcase>
+</testsuite>
+</testsuites>
