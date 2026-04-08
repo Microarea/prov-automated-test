@@ -33,8 +33,8 @@ const map: Record<EnvKey, Record<ServiceName, ServiceConfig>> = {
 };
 
 export function getEnvKey(): EnvKey {
-  const key = (process.env.TEST_ENV || 'dev').toLowerCase() as EnvKey;
-  return (['local', 'dev', 'qa', 'prod'] as EnvKey[]).includes(key) ? key : 'dev';
+  const key = (process.env.TEST_ENV || 'test').toLowerCase() as EnvKey;
+  return (['local', 'test', 'release', 'prod'] as EnvKey[]).includes(key) ? key : 'test';
 }
 
 export function getServiceConfig(service: ServiceName): ServiceConfig {
