@@ -2,15 +2,12 @@
 
 import { request, APIRequestContext } from '@playwright/test';
 import { getServiceConfig } from '../config/env';
+import { getJwtToken } from './auth.client';
 
 export async function consoleClient(): Promise<APIRequestContext> {
-  const jwt = process.env.API_JWT;
-
-  if (!jwt) {
-    throw new Error('API_JWT non impostato');
-  }
-
   const { baseUrl } = getServiceConfig('ccbe');
+
+  const jwt = await getJwtToken();
 
   const authPayload = {
     Type: 'JWT',
