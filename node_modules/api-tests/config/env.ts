@@ -15,24 +15,25 @@ const map: Record<EnvKey, Record<ServiceName, ServiceConfig>> = {
   test: {
     users:    { baseUrl: 'https://test-pippo' },
     gwam:     { baseUrl: 'https://test-gwam.mago.cloud' },
-    mapper:   { baseUrl: 'https://test-gwam.mago.cloud/gwam_mapper' },
-    ccbe:     { baseUrl: 'https://test-console.mago.cloud/be' }
+    mapper:   { baseUrl: 'https://test-gwam.mago.cloud/gwam_mapper/' },
+    ccbe:     { baseUrl: 'https://test-console.mago.cloud/' }
   },
   release: {
     users:    { baseUrl: 'https://release-pippo' },
     gwam:     { baseUrl: 'https://release-gwam.mago.cloud' },
-    mapper:   { baseUrl: 'https://qa.api.acme.com/orders' },
-    ccbe:     { baseUrl: 'https://release-console.mago.cloud/be' }
+    mapper:   { baseUrl: 'https://release-gwam.mago.cloud/gwam_mapper/' },
+    ccbe:     { baseUrl: 'https://release-console.mago.cloud/' }
   },
   prod: {
     users:    { baseUrl: 'https://pippo' },
     gwam:     { baseUrl: 'manz8-https://gwam.mago.cloud' },
-    mapper:   { baseUrl: 'https://api.acme.com/orders' },
-    ccbe:     { baseUrl: 'manz8-https://console.mago.cloud/be' }
+    mapper:   { baseUrl: 'manz8-https://gwam.mago.cloud/gwam_mapper/' },
+    ccbe:     { baseUrl: 'manz8-https://console.mago.cloud/' }
   }
 };
 
 export function getEnvKey(): EnvKey {
+  console.log('TEST_ENV =', process.env.TEST_ENV);
   const key = (process.env.TEST_ENV || 'test').toLowerCase() as EnvKey;
   return (['local', 'test', 'release', 'prod'] as EnvKey[]).includes(key) ? key : 'test';
 }

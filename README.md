@@ -144,10 +144,10 @@ Tutti i test API:
 npx playwright test
 
 Una “collection” (cartella):
-npx playwright test api-tests/tests/console
+npx playwright test api-tests/tests/subscriptions
 
 Un singolo test:
-npx playwright test api-tests/tests/console/subscription-package.spec.ts
+npx playwright test api-tests/tests/subscriptions/subscription-package.spec.ts
 
 ---
 
@@ -197,8 +197,10 @@ Prossimi step:
 
 ### Per reperire il token è necessario mettere le credenziali. 
     Nella powershell inserire: 
+
     $env:GWAM_USER="giovanni.farina@zucchetti.com"
     $env:GWAM_PASSWORD="password"
+
     I dati devono essere tra virgolette e tutto su una riga.
     Ed in coda lanciare l’npx con il test. 
 
@@ -206,4 +208,5 @@ Prossimi step:
     cd api-tests
     npx playwright test ….
     npx playwright show-report
+    
     (in Teoria, se c’è errore si apre in automatico, altrimenti rimane il link con la possibilità di consultarlo nella powershell)

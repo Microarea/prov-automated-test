@@ -36,7 +36,7 @@ export async function getJwtToken(): Promise<string> {
   });
 
   if (!res.ok()) {
-    throw new Error(`Login GWAM fallito: ${res.status()}`);
+    throw new Error(`Login GWAM fallita: ${res.status()}`);
   }
 
   const body = await res.json();
