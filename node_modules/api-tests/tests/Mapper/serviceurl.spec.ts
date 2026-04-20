@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { mapperClient } from '../../clients/mapper.client';
 
+//Questa API serve, data una subscription ed un service type, a farsi tornare URL dello specifico servizio indicato. Usata da diversi servizi come MDM, DBTOOLS, ecc
 test('GET serviceURL returns 200', async () => {
   const api = await mapperClient();
 

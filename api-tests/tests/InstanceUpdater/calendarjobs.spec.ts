@@ -1,12 +1,12 @@
 import { test, expect } from '@playwright/test';
-import { mapperClient } from '../../clients/mapper.client';
+import { iupClient } from '../../clients/iup.client';
 
 //Questa API serve per la discovery, nel caso non risponda nessuno riesce a reperire i servizi. 
-test('GET snapshotcontainer returns 200', async () => {
-  const api = await mapperClient();
+test('GET calendarjobs returns 200', async () => {
+  const api = await iupClient();
 
   const res = await api.get(
-    'api/snapshotcontainer?subscriptionKey=DEV-24-08F692'
+    'be/api/calendarjobs?SubscriptionKey=DEV-24-08F692'
   );
 
   console.log('REQUEST URL:', res.url());
