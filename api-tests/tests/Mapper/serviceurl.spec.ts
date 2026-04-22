@@ -1,12 +1,17 @@
 import { test, expect } from '@playwright/test';
 import { mapperClient } from '../../clients/mapper.client';
+import parameters from '../../data/parameters.json';
+
 
 //Questa API serve, data una subscription ed un service type, a farsi tornare URL dello specifico servizio indicato. Usata da diversi servizi come MDM, DBTOOLS, ecc
 test('GET serviceURL returns 200', async () => {
   const api = await mapperClient();
 
+  const subscription = parameters.cloudConsole.subscriptionCode;
+  const service = parameters.cloudConsole.service;
+
   const res = await api.get(
-    'api/services/url/DEV-24-08F692/CLOUDCONSOLE'
+    `api/services/url/${subscription}/${service}`
   );
 
   console.log('REQUEST URL:', res.url());

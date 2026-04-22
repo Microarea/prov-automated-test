@@ -1,12 +1,15 @@
 import { test, expect } from '@playwright/test';
 import { mapperClient } from '../../clients/mapper.client';
+import parameters from '../../data/parameters.json';
 
 //Questa API serve per la discovery, nel caso non risponda nessuno riesce a reperire i servizi. 
 test('GET snapshotcontainer returns 200', async () => {
   const api = await mapperClient();
 
+  const subscription = parameters.default.subscriptionCode;
+
   const res = await api.get(
-    'api/snapshotcontainer?subscriptionKey=DEV-24-08F692'
+    `api/snapshotcontainer?subscriptionKey=${subscription}`
   );
 
   console.log('REQUEST URL:', res.url());

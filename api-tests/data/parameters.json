@@ -1,0 +1,17 @@
+{
+  "default": {
+    "subscriptionCode": "DEV-24-3C6CC6",
+    "environment": "release",
+    "instance": "I-RELEASE"
+  },
+  "cloudConsole": {
+    "subscriptionCode": "DEV-24-3C6CC6",
+    "service": "CLOUDCONSOLE",
+    "instance": "I-RELEASE"
+  },
+  "magoPortal": {
+    "subscriptionCode": "DEV-99-AAAAAA",
+    "service": "Storepippo",
+    "instance": "I-RELEASE"
+  }
+}
