@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  api-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: playwright-api-tests
+    environment:
+      - GWAM_USER=${GWAM_USER}
+      - GWAM_PASSWORD=${GWAM_PASSWORD}
+      - TEST_ENV=${TEST_ENV:-test}
+    volumes:
+      - ./api-tests/playwright-report:/app/api-tests/playwright-report
+      - ./api-tests/test-results:/app/api-tests/test-results
+    command: npx playwright test
+
