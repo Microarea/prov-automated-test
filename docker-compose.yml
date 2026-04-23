@@ -15,3 +15,14 @@ services:
       - ./api-tests/test-results:/app/api-tests/test-results
     command: npx playwright test
 
+  # Web server to view HTML reports
+  report:
+    image: nginx:alpine
+    container_name: playwright-report-server
+    volumes:
+      - ./api-tests/playwright-report:/usr/share/nginx/html
+    ports:
+      - "9080:80"
+    profiles:
+      - report
+
