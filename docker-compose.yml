@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   api-tests:
     build:
@@ -22,7 +20,7 @@ services:
     volumes:
       - ./api-tests/playwright-report:/usr/share/nginx/html
     ports:
-      - "9080:80"
+      - "9091:80"
     profiles:
       - report
 

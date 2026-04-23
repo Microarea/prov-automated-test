@@ -204,9 +204,32 @@ Prossimi step:
     I dati devono essere tra virgolette e tutto su una riga.
     Ed in coda lanciare l’npx con il test. 
 
-### Per far uscire l’html con il report verificare di lanciare lo “show report” nella cartella giusta. 
+### Per far uscire l’html con il report verificare di lanciare lo “show report” nella cartella giusta.
     cd api-tests
     npx playwright test ….
     npx playwright show-report
-    
+
     (in Teoria, se c’è errore si apre in automatico, altrimenti rimane il link con la possibilità di consultarlo nella powershell)
+
+---
+
+## CI/CD con Docker e Jenkins
+
+Il progetto supporta esecuzione in container Docker e integrazione Jenkins per CI/CD.
+
+### Docker Local
+
+Per eseguire i test in locale senza installare Node.js:
+
+```bash
+# 1. Crea il file .env con le credenziali
+cp .env.example .env
+# Modifica .env con le tue credenziali (usa $$ per il $ nella password)
+
+# 2. Esegui i test
+docker-compose up api-tests
+
+# 3. Avvia il server del report
+docker-compose --profile report up report
+# Apri http://localhost:9080
+```
