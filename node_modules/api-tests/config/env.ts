@@ -1,38 +1,50 @@
 // api-tests/config/env.ts
 
-export type ServiceName = 'users' | 'mapper' | 'ccbe' | 'gwam' | 'iup'; // aggiungi i servizi che vuoi testare
+export type ServiceName = 'mapper' | 'ccbe' | 'gwam' | 'iup' | 'dbtools' | 'gateway' | 'messaging' | 'ping'; // aggiungi i servizi che vuoi testare
 type EnvKey = 'local' | 'test' | 'release' | 'prod';
 
-type ServiceConfig = { baseUrl: string };
+  type ServiceConfig = { baseUrl: string };
 
 const map: Record<EnvKey, Record<ServiceName, ServiceConfig>> = {
   local: {
-    users:    { baseUrl: 'http://localhost:8081' },
     gwam:     { baseUrl: 'http://localhost:8082' },
     mapper:   { baseUrl: 'http://localhost:8083' },
     ccbe:     { baseUrl: 'http://localhost:8084' },
-    iup:      { baseUrl: 'http://localhost:8085' }
+    iup:      { baseUrl: 'http://localhost:8085' },
+    dbtools:  { baseUrl: 'http://localhost:8086' },
+    gateway:  { baseUrl: 'http://localhost:8087' },
+    messaging:{ baseUrl: 'http://localhost:8088' },
+    ping:     { baseUrl: 'http://localhost:8089' }
   },
   test: {
-    users:    { baseUrl: 'https://test-pippo' },
-    gwam:     { baseUrl: 'https://test-gwam.mago.cloud' },
+    gwam:     { baseUrl: 'https://test-gwam.mago.cloud/' },
     mapper:   { baseUrl: 'https://test-gwam.mago.cloud/gwam_mapper/' },
     ccbe:     { baseUrl: 'https://test-console.mago.cloud/' },
-    iup:      { baseUrl: 'https://test-instance-updater.mago.cloud/' }
+    iup:      { baseUrl: 'https://test-instance-updater.mago.cloud/' },
+    dbtools:  { baseUrl: 'https://test-dbtools.mago.cloud/' },
+    gateway:  { baseUrl: 'https://test-my.mago.cloud/' },
+    messaging:{ baseUrl: 'https://test-messaging.mago.cloud/' },
+    ping:     { baseUrl: 'https://test-ping.mago.cloud/' }
   },
   release: {
-    users:    { baseUrl: 'https://release-pippo' },
-    gwam:     { baseUrl: 'https://release-gwam.mago.cloud' },
+    gwam:     { baseUrl: 'https://release-gwam.mago.cloud/' },
     mapper:   { baseUrl: 'https://release-gwam.mago.cloud/gwam_mapper/' },
     ccbe:     { baseUrl: 'https://release-console.mago.cloud/' },
-    iup:      { baseUrl: 'https://release-instance-updater.mago.cloud/' }
+    iup:      { baseUrl: 'https://release-instance-updater.mago.cloud/' },
+    dbtools:  { baseUrl: 'https://release-dbtools.mago.cloud/' },
+    gateway:  { baseUrl: 'https://release-my.mago.cloud/' },
+    messaging:{ baseUrl: 'https://release-messaging.mago.cloud/' },
+    ping:     { baseUrl: 'https://release-ping.mago.cloud/' }
   },
   prod: {
-    users:    { baseUrl: 'https://pippo' },
-    gwam:     { baseUrl: 'manz8-https://gwam.mago.cloud' },
-    mapper:   { baseUrl: 'manz8-https://gwam.mago.cloud/gwam_mapper/' },
-    ccbe:     { baseUrl: 'manz8-https://console.mago.cloud/' },
-    iup:      { baseUrl: 'manz8-https://instance-updater.mago.cloud/' }
+    gwam:     { baseUrl: 'https://gwam.mago.cloud/' },
+    mapper:   { baseUrl: 'https://gwam.mago.cloud/gwam_mapper/' },
+    ccbe:     { baseUrl: 'https://console.mago.cloud/' },
+    iup:      { baseUrl: 'https://instance-updater.mago.cloud/' },
+    dbtools:  { baseUrl: 'https://dbtools.mago.cloud/' },
+    gateway:  { baseUrl: 'https://my.mago.cloud/' },
+    messaging:{ baseUrl: 'https://messaging.mago.cloud/' },
+    ping:     { baseUrl: 'https://pings.mago.cloud/' }
   }
 };
 

@@ -1,8 +1,12 @@
 import { test, expect } from '@playwright/test';
-  // Scenario
-test('Health Check Mapper', async ({ request }) => {
+import { mapperClient } from '../../clients/mapper.client';
+
+test('Health Check Mapper', async () => {
+  const api = await mapperClient();
   // Azione - Verifica che la pagina di versione del Gwam App sia accessibile 
-  const res = await request.get('https://test-gwam.mago.cloud/gwam_mapper/api/assemblyversion');
+  const res = await api.get(
+    'gwam_mapper/api/assemblyversion'
+  );
   // Verifica - Controlla che la risposta abbia uno status code di 200 (OK)
   expect(res.status()).toBe(200);
 });
