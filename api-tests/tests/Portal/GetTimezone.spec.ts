@@ -5,7 +5,7 @@ import parameters from '../../data/parameters.json';
 test('GET Timezone returns 200', async () => {
   
   const api = await portalClient();
-  const account = parameters.magoPortal.account;
+  const account = process.env.GWAM_USER;
   const isocountrycode = parameters.magoPortal.isocountrycode;
   const res = await api.get(
     `be/api/gettimezone/${account}?isocountrycode=${isocountrycode}`

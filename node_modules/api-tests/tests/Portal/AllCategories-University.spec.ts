@@ -5,7 +5,7 @@ import parameters from '../../data/parameters.json';
 test('POST All Categories from MagoUniversity returns 200', async () => {
   
   const api = await portalClient();
-  const account = parameters.magoPortal.account;
+  const account =  process.env.GWAM_USER;
   const res = await api.post(
     `be/api/getAllCategories/${account}`
   );
