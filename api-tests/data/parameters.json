@@ -14,6 +14,7 @@
     "service": "Storepippo",
     "instance": "I-RELEASE",
     "account": "giovanni.farina@zucchetti.com",
-    "isocountrycode": "IT"
+    "isocountrycode": "IT",
+    "partnercode": "1"
   }
 }
