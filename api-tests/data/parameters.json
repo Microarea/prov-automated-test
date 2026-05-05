@@ -12,6 +12,8 @@
   "magoPortal": {
     "subscriptionCode": "DEV-99-AAAAAA",
     "service": "Storepippo",
-    "instance": "I-RELEASE"
+    "instance": "I-RELEASE",
+    "account": "giovanni.farina@zucchetti.com",
+    "isocountrycode": "IT"
   }
 }

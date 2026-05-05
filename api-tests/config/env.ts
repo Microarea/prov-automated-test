@@ -1,6 +1,6 @@
 // api-tests/config/env.ts
 
-export type ServiceName = 'mapper' | 'ccbe' | 'gwam' | 'iup' | 'dbtools' | 'gateway' | 'messaging' | 'ping'; // aggiungi i servizi che vuoi testare
+export type ServiceName = 'mapper' | 'ccbe' | 'gwam' | 'iup' | 'dbtools' | 'gateway' | 'messaging' | 'ping' | 'portal'; // aggiungi i servizi che vuoi testare
 type EnvKey = 'local' | 'test' | 'release' | 'prod';
 
   type ServiceConfig = { baseUrl: string };
@@ -14,7 +14,8 @@ const map: Record<EnvKey, Record<ServiceName, ServiceConfig>> = {
     dbtools:  { baseUrl: 'http://localhost:8086' },
     gateway:  { baseUrl: 'http://localhost:8087' },
     messaging:{ baseUrl: 'http://localhost:8088' },
-    ping:     { baseUrl: 'http://localhost:8089' }
+    ping:     { baseUrl: 'http://localhost:8089' },
+    portal:   { baseUrl: 'http://localhost:8090' }  
   },
   test: {
     gwam:     { baseUrl: 'https://test-gwam.mago.cloud/' },
@@ -24,7 +25,8 @@ const map: Record<EnvKey, Record<ServiceName, ServiceConfig>> = {
     dbtools:  { baseUrl: 'https://test-dbtools.mago.cloud/' },
     gateway:  { baseUrl: 'https://test-my.mago.cloud/' },
     messaging:{ baseUrl: 'https://test-messaging.mago.cloud/' },
-    ping:     { baseUrl: 'https://test-ping.mago.cloud/' }
+    ping:     { baseUrl: 'https://test-ping.mago.cloud/' },
+    portal:   { baseUrl: 'https://test-store.mago.cloud/' }  
   },
   release: {
     gwam:     { baseUrl: 'https://release-gwam.mago.cloud/' },
@@ -34,7 +36,8 @@ const map: Record<EnvKey, Record<ServiceName, ServiceConfig>> = {
     dbtools:  { baseUrl: 'https://release-dbtools.mago.cloud/' },
     gateway:  { baseUrl: 'https://release-my.mago.cloud/' },
     messaging:{ baseUrl: 'https://release-messaging.mago.cloud/' },
-    ping:     { baseUrl: 'https://release-ping.mago.cloud/' }
+    ping:     { baseUrl: 'https://release-ping.mago.cloud/' },
+    portal:   { baseUrl: 'https://release-store.mago.cloud/' }  
   },
   prod: {
     gwam:     { baseUrl: 'https://gwam.mago.cloud/' },
@@ -44,7 +47,8 @@ const map: Record<EnvKey, Record<ServiceName, ServiceConfig>> = {
     dbtools:  { baseUrl: 'https://dbtools.mago.cloud/' },
     gateway:  { baseUrl: 'https://my.mago.cloud/' },
     messaging:{ baseUrl: 'https://messaging.mago.cloud/' },
-    ping:     { baseUrl: 'https://pings.mago.cloud/' }
+    ping:     { baseUrl: 'https://pings.mago.cloud/' },
+    portal:   { baseUrl: 'https://mymago.zucchetti.com/' }  
   }
 };
 
