@@ -200,6 +200,7 @@ Prossimi step:
 
     $env:GWAM_USER="giovanni.farina@zucchetti.com"
     $env:GWAM_PASSWORD="password"
+    $env:TEST_ENV="ambiente"
 
     I dati devono essere tra virgolette e tutto su una riga.
     Ed in coda lanciare l’npx con il test. 
