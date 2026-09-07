@@ -36,7 +36,6 @@ test('Get Improvement Requests', async () => {
     status,
     searchString
   });
-
   console.log(body);
 
   await api.dispose();
