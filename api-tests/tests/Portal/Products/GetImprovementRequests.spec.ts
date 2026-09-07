@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { portalClient } from '../../../clients/portal.client';
 import parameters from '../../../data/parameters.json';
+import { getServiceConfig } from '../../../config/env';
 
 test('Get Improvement Requests', async () => {
   const api = await portalClient();
@@ -11,9 +12,10 @@ test('Get Improvement Requests', async () => {
   const status = parameters.magoPortal.status;
   const searchString = parameters.magoPortal.searchString2;
   const ProxyAuthToken = parameters.magoPortal.ProxyAuthToken;
+  const user = process.env.GWAM_USER;
 
   const res = await api.post(
-    `be/api/getImprovementRequests/${account}` + 
+    `be/api/getImprovementRequests/${user}` + 
       `?productCode=${encodeURIComponent(productCode)}` +
       `&companyCode=${encodeURIComponent(companyCode)}` +
       `&status=${encodeURIComponent(status)}` +
