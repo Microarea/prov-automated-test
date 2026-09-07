@@ -5,12 +5,12 @@ import parameters from '../../../data/parameters.json';
 test('Research Incidents by ProductCode and Release', async () => {
   const api = await portalClient();
 
-  const account = parameters.magoPortal.account;
+  const user = process.env.GWAM_USER;
   const productCode = parameters.magoPortal.productCode;
   const ProxyAuthToken = parameters.magoPortal.ProxyAuthToken;
 
   const res = await api.post(
-    `be/api/getIncidents/${account}` + 
+    `be/api/getIncidents/${user}` + 
       `?productCode=${encodeURIComponent(productCode)}` +
       `&releaseFrom=4.2` +
       `&releaseTo=4.2`,
@@ -26,7 +26,7 @@ test('Research Incidents by ProductCode and Release', async () => {
   const body = await res.json();
 
   console.log('REQUEST PARAMETERS:', {
-    account,
+    user,
     productCode,
     releaseFrom: '4.2',
     releaseTo: '4.2'

@@ -5,11 +5,11 @@ import parameters from '../../../data/parameters.json';
 test('Get Improvement Requests Search Data', async () => {
   const api = await portalClient();
 
-  const account = parameters.magoPortal.account;
+  const user = process.env.GWAM_USER;
   const ProxyAuthToken = parameters.magoPortal.ProxyAuthToken;
 
   const res = await api.post(
-    `be/api/getImpReqSearchData/${account}`,
+    `be/api/getImpReqSearchData/${user}`,
     {
       data: {
         ProxyAuthToken
@@ -22,7 +22,7 @@ test('Get Improvement Requests Search Data', async () => {
   const body = await res.json();
 
   console.log('REQUEST PARAMETERS:', {
-    account
+    user
   });
   console.log(body);
 
