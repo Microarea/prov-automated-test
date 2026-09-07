@@ -2,18 +2,14 @@ import { test, expect } from '@playwright/test';
 import { portalClient } from '../../../clients/portal.client';
 import parameters from '../../../data/parameters.json';
 
-test('Research project improvement by ProductCode and searchString', async () => {
+test('Get Project Archived Document Info', async () => {
   const api = await portalClient();
 
   const account = parameters.magoPortal.account;
-  const productCode = parameters.magoPortal.productCode;
-  const searchString = parameters.magoPortal.searchString;
   const ProxyAuthToken = parameters.magoPortal.ProxyAuthToken;
 
   const res = await api.post(
-    `be/api/getProjectImprovementReleases/${account}` +
-      `?productCode=${encodeURIComponent(productCode)}` +
-      `&searchString=${encodeURIComponent(searchString)}`,
+    `be/api/getProjectArchiviedDocumentInfo/${account}`,
     {
       data: {
         ProxyAuthToken
@@ -26,11 +22,8 @@ test('Research project improvement by ProductCode and searchString', async () =>
   const body = await res.json();
 
   console.log('REQUEST PARAMETERS:', {
-    account,
-    productCode,
-    searchString
+    account
   });
-
   console.log(body);
 
   await api.dispose();

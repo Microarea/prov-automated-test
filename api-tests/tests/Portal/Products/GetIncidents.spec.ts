@@ -7,7 +7,7 @@ test('Research Incidents by ProductCode and Release', async () => {
 
   const account = parameters.magoPortal.account;
   const productCode = parameters.magoPortal.productCode;
-  const authToken = parameters.magoPortal.authToken;
+  const ProxyAuthToken = parameters.magoPortal.ProxyAuthToken;
 
   const res = await api.post(
     `be/api/getIncidents/${account}` + 
@@ -16,7 +16,7 @@ test('Research Incidents by ProductCode and Release', async () => {
       `&releaseTo=4.2`,
     {
       data: {
-        authToken
+        ProxyAuthToken
       }
     }
   );
