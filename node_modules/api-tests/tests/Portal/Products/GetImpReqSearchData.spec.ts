@@ -5,6 +5,7 @@ import parameters from '../../../data/parameters.json';
 test('Get Improvement Requests Search Data', async () => {
   const api = await portalClient();
 
+  //l'utente autorizzato a fare la chiamata è quello settato nelle variabili d'ambiente
   const user = process.env.GWAM_USER;
   const ProxyAuthToken = parameters.magoPortal.ProxyAuthToken;
 

@@ -2,19 +2,15 @@ import { test, expect } from '@playwright/test';
 import { portalClient } from '../../../clients/portal.client';
 import parameters from '../../../data/parameters.json';
 
-test('Research project improvement by ProductCode and searchString', async () => {
+test('Get Improvement Requests Search Data', async () => {
   const api = await portalClient();
 
-  //l'utente autorizzato a fare la chiamata è quello settato nelle variabili d'ambiente  
+  //l'utente autorizzato a fare la chiamata è quello settato nelle variabili d'ambiente
   const user = process.env.GWAM_USER;
-  const productCode = parameters.magoPortal.productCode;
-  const searchString = parameters.magoPortal.searchString1;
   const ProxyAuthToken = parameters.magoPortal.ProxyAuthToken;
 
   const res = await api.post(
-    `be/api/getProjectImprovementReleases/${user}` +
-      `?productCode=${encodeURIComponent(productCode)}` +
-      `&searchString=${encodeURIComponent(searchString)}`,
+    `be/api/getAllProductsDescription/${user}`,
     {
       data: {
         ProxyAuthToken
@@ -27,11 +23,8 @@ test('Research project improvement by ProductCode and searchString', async () =>
   const body = await res.json();
 
   console.log('REQUEST PARAMETERS:', {
-    user,
-    productCode,
-    searchString
+    user
   });
-
   console.log(body);
 
   await api.dispose();
