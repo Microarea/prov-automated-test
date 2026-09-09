@@ -16,11 +16,19 @@
     "account": "giovanni.farina@zucchetti.com",
     "isocountrycode": "IT",
     "partnercode": "1",
+    "ProxyAuthToken": "cVsYiT1g699Uq8PW"
+  },
+  "GetImprovementRequests": {
     "productCode": "MAGO4",
-    "searchString1": "Sopra la griglia, tra il bottone esistente 'New Request' ('Nuova Richiesta') ed il nuovo bottone 'Actions' ('Azioni'), deve essere aggiunto il bottone",
-    "searchString2": "1234",
     "companyCode": "0110C039",
     "status": "41156611",
-    "ProxyAuthToken": "cVsYiT1g699Uq8PW"
+    "searchString": "1234"
+  },
+  "GetIncidents": {
+    "productCode": "MAGO4"
+  },
+  "GetProjectimprovementreleases": {
+    "productCode": "MAGO4",
+    "searchString": "Sopra la griglia, tra il bottone esistente 'New Request' ('Nuova Richiesta') ed il nuovo bottone 'Actions' ('Azioni'), deve essere aggiunto il bottone"
   }
 }

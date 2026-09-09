@@ -7,8 +7,8 @@ test('Research project improvement by ProductCode and searchString', async () =>
 
   //l'utente autorizzato a fare la chiamata è quello settato nelle variabili d'ambiente  
   const user = process.env.GWAM_USER;
-  const productCode = parameters.magoPortal.productCode;
-  const searchString = parameters.magoPortal.searchString1;
+  const productCode = parameters.GetProjectimprovementreleases.productCode;
+  const searchString = parameters.GetProjectimprovementreleases.searchString;
   const ProxyAuthToken = parameters.magoPortal.ProxyAuthToken;
 
   const res = await api.post(

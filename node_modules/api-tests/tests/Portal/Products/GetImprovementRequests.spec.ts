@@ -7,10 +7,10 @@ test('Get Improvement Requests', async () => {
 
 //l'utente autorizzato a fare la chiamata è quello settato nelle variabili d'ambiente
   const user = process.env.GWAM_USER;
-  const productCode = parameters.magoPortal.productCode;
-  const companyCode = parameters.magoPortal.companyCode;
-  const status = parameters.magoPortal.status;
-  const searchString = parameters.magoPortal.searchString2;
+  const productCode = parameters.GetImprovementRequests.productCode;
+  const companyCode = parameters.GetImprovementRequests.companyCode;
+  const status = parameters.GetImprovementRequests.status;
+  const searchString = parameters.GetImprovementRequests.searchString;
   const ProxyAuthToken = parameters.magoPortal.ProxyAuthToken;
   
   const res = await api.post(
