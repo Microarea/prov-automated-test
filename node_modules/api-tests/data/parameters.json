@@ -30,5 +30,9 @@
   "GetProjectimprovementreleases": {
     "productCode": "MAGO4",
     "searchString": "Sopra la griglia, tra il bottone esistente 'New Request' ('Nuova Richiesta') ed il nuovo bottone 'Actions' ('Azioni'), deve essere aggiunto il bottone"
+  },
+  "VerifyNewsletterEmail": {
+    "companyCode": "1",
+    "token": ""
   }
 }
