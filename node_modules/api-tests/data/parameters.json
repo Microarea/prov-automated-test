@@ -40,5 +40,8 @@
   },
   "GeneratePassKey": {
     "productCode": "MAGOCLD"
+  },
+  "GetAllPosts": {
+    "categoryNames": "PRODUCTS_UPDATE;TECHNICAL_INFO"
   }
 }
