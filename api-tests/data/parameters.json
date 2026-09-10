@@ -50,5 +50,9 @@
   "GetAllCoursesTrainingPlans": {
     "pageIndex": 0,
     "pageSize": 3
+  },
+  "GetBlogAccount": {
+    "companyCode": "1",
+    "email": "giovanni.farina@zucchetti.com"
   }
 }
