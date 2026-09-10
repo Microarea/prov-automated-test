@@ -34,5 +34,8 @@
   "VerifyNewsletterEmail": {
     "companyCode": "1",
     "token": ""
+  },
+  "GetAllCompanyEmails": {
+    "companyCode": "176010"
   }
 }
