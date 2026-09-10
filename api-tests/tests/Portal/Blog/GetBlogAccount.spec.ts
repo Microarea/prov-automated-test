@@ -9,7 +9,7 @@ test.describe('Portal > Blog', () => {
   //l'utente autorizzato a fare la chiamata è quello settato nelle variabili d'ambiente
     const user = process.env.GWAM_USER;
     const companycode = parameters.GetBlogAccount.companyCode;
-    const email = parameters.GetBlogAccount.email;
+    const email = process.env.GWAM_USER;
     
     const res = await api.post(
       `be/api/getBlogAccount/${user}` + 
