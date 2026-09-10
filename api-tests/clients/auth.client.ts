@@ -1,5 +1,7 @@
 import { request } from '@playwright/test';
 import { getServiceConfig } from '../config/env';
+import { portalClient } from '../clients/portal.client';
+import parameters from '../data/parameters.json';
 
 let cachedToken: string | null = null;
 
@@ -54,4 +56,21 @@ export async function getJwtToken(): Promise<string> {
 
   await api.dispose();
   return cachedToken;
+}
+
+// Funzione per generare un PassKey e restituire l'OTPToken
+// Nota: API GeneratePassKey 
+export async function generatePassKey(): Promise<string> {
+  const api = await portalClient();
+
+  const user = process.env.GWAM_USER;
+  const productcode = parameters.GeneratePassKey.productCode;
+
+  const res = await api.post(
+    `be/api/generatePassKey/${user}?productCode=${productcode}`
+  );
+
+  const body = await res.json();
+
+  return body.Content.OTPToken;
 }
